@@ -1,3 +1,2 @@
 # susususutie.github.io
-blog website test
-全部替换
+简易网页测试

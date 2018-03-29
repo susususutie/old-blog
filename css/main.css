@@ -9,7 +9,7 @@ html {
 	display: block;
 }
 body {
-	background: #ebebeb;
+	background: #fdfcf8;
 }
 div {
 	display: block;
@@ -110,6 +110,7 @@ li {
 	border-style: solid;
 	border-width: 0 2px;
 	border-color: #c6c6c6;
+  overflow:hidden;
 }
 #navleft h2, #navleft ul, #navright h2, #navright ul {
 	padding-left: 15px;
@@ -136,11 +137,19 @@ li {
 	border-color: #c6c6c6;
 	float: left;
 	width: 181px;
+  overflow:hidden;
 }
 #footer {
 	margin-left: 10px;
 	width: 1220px;
 	clear: both;
 	text-align: center;
-	background-color: #c6c6c6;
+}
+#p1 {
+  background-color: #c6c6c6;
+  padding: 30px 0;
+  display: block;
+}
+#p2 {
+  margin: 30px 0;
 }

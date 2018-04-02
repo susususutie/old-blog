@@ -1,3 +1,8 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .navbar-brand {
   background-image: url(../images/logo.jpg);
   width: 50px;
@@ -5,8 +10,87 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .side-bar .list-group-item {
   border: 0;
   border-radius: 3px;
   margin-bottom: 5px;
+}
+
+a.list-group-item:hover {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.news-group-item {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.news-group-item:first-child {
+  padding-top: 0;
+}
+
+.news-group-item .col-xs-5 img {
+  border-radius: 5px;
+}
+
+.news-group-item .title {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.news-group-item .brief {
+  font-size: 15px;
+  color: #666;
+}
+
+.news-group-item .info {
+  font-size: 14px;
+}
+
+.news-group-item .info img {
+  display: inline-block;
+  width: 14px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.ad-card {
+  display: block;
+  color: #333;
+  background-color: rgba(0,0,0,.05);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.ad-card:hover {
+  color: #337ab7;
+  background-color: rgba(0, 0, 0, .1);
+}
+.ad-card img {
+  border-radius: 3px;
+}
+.side-bar-group {
+  background-color: rgba(0, 0, 0, .05);
+}
+.side-bar-group .title {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 10px 0 10px;
+}
+
+.side-bar-item {
+  padding: 10px;
+}
+
+.side-bar-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.side-bar-item .side-desc {
+  font-size: 12px;
+  color: #a7a7a7;
 }

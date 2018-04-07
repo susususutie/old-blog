@@ -16,37 +16,48 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="index.html"></a>
       </div>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="#">首页</a>
-        </li>
-        <li>
-          <a href="#">LINK0</a>
-        </li>
-        <li>
-          <a href="#">LINK1</a>
-        </li>
-        <li>
-          <a href="#">LINK2</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="#">Logon</a>
-        </li>
-        <li>
-          <a href="#">Register</a>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-right from-inline">
-        <input class="form-control" type="text" >
-        <button class="btn btn-default" type="search" >Search</button>
-      </form>
+      <label id="check-menu-label" for="check-menu-hidden" class="visible-xs-inline-block">MENU</label>
+      <input id="check-menu-hidden" class="hidden" type="checkbox">
+      <div class="hidden-xs">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="index.html">首页</a>
+          </li>
+          <li>
+            <a href="#">LINK0</a>
+          </li>
+          <li>
+            <a href="#">LINK1</a>
+          </li>
+          <li>
+            <a href="#">LINK2</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="signup.html">Signup</a>
+          </li>
+        </ul>
+
+        <form class="navbar-form form-group navbar-right hidden-sm">
+
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="搜一搜">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="search">Search</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
     </div>
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 hidden-sm hidden-xs">
         <div class="list-group side-bar">
           <a class="list-group-item active" href="#">item</a>
           <a class="list-group-item" href="#">item</a>
@@ -69,7 +80,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题<span class="label label-info">原创</span></div>
+              <a class="title" href="news.html">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题<span class="label label-info">原创</span></a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">王主编<span class="badge">阅读10k</span>
               </p>
@@ -80,7 +91,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">刘主编<span class="badge">阅读10k</span>
               </p>
@@ -91,7 +102,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">赵主编<span class="badge">阅读6.1k</span>
               </p>
@@ -102,7 +113,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">王主编<span class="badge">阅读10k</span>
               </p>
@@ -113,7 +124,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">王主编<span class="badge">阅读10k</span>
               </p>
@@ -124,7 +135,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">王主编<span class="badge">阅读10k</span>
               </p>
@@ -135,7 +146,7 @@
               <img src="images/news.jpg" alt="news01">
             </div>
             <div class="col-xs-7">
-              <div class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</div>
+              <a class="title">新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题</a>
               <p class="brief">新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介新闻简介</p>
               <p class="info"><img src="images/logo.jpg" alt="">王主编<span class="badge">阅读10k</span>
               </p>
@@ -230,6 +241,11 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      Copyright © 2013-2018 菜鸟教程 runoob.com All Rights Reserved. 备案号：闽ICP备15012807号-1
     </div>
   </div>
 </body>

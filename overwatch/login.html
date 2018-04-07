@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bootstrap新闻站测试</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="images/News.png" />
+</head>
+
+<body>
+  <div class="nav navbar navbar-top navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"></a>
+      </div>
+      <label id="check-menu-label" for="check-menu-hidden" class="visible-xs-inline-block">MENU</label>
+      <input id="check-menu-hidden" class="hidden" type="checkbox">
+      <div class="hidden-xs">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="index.html">首页</a>
+          </li>
+          <li>
+            <a href="#">LINK0</a>
+          </li>
+          <li>
+            <a href="#">LINK1</a>
+          </li>
+          <li>
+            <a href="#">LINK2</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="signup.html">Signup</a>
+          </li>
+        </ul>
+
+        <form class="navbar-form form-group navbar-right hidden-sm">
+
+          <div class="input-group">
+            <input class="form-control" type="search" placeholder="搜一搜">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="search">Search</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container container-sm">
+    <form role="form">
+      <h1>登录
+        <small>没有帐号？
+          <a href="signup.html">注册</a>
+        </small>
+      </h1>
+      <div class="form-group">
+        <label for="user-name">手机号|邮箱|用户名</label>
+        <input class="form-control" type="text" name="user-name">
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input class="form-control" type="password" name="password">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="button" name="button">登录</button>
+      </div>
+      <div class="form-group">
+        <a href="#">忘记密码？</a>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <div class="container">
+      Copyright © 2013-2018 菜鸟教程 runoob.com All Rights Reserved. 备案号：闽ICP备15012807号-1
+    </div>
+  </div>
+</body>
+
+</html>

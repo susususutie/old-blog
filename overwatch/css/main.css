@@ -3,12 +3,24 @@ img {
   max-width: 100%;
 }
 
+.no-padding-l {
+  padding-left: 0;
+}
+
+.no-padding-r {
+  padding-right: 0;
+}
+
 .navbar-brand {
   background-image: url(../images/logo.jpg);
   width: 50px;
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.nav .navbar-nav li:hover {
+  background-color: #e7e7e7;
 }
 
 .side-bar .list-group-item {
@@ -25,11 +37,15 @@ a.list-group-item:hover {
 .news-group-item {
   padding-bottom: 15px;
   padding-top: 15px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
 
 .news-group-item:first-child {
   padding-top: 0;
+}
+
+.news-group-item:last-child {
+  border-bottom: none;
 }
 
 .news-group-item .col-xs-5 img {
@@ -37,24 +53,29 @@ a.list-group-item:hover {
 }
 
 .news-group-item .title {
-  font-size: 19px;
-  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
   line-height: 1.5;
   margin-bottom: 8px;
 }
 
+.news-group-item a.title:hover {
+  color: #337ab7;
+  text-decoration: none;
+}
+
 .news-group-item .brief {
-  font-size: 15px;
-  color: #666;
+  color: #555;
 }
 
 .news-group-item .info {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .news-group-item .info img {
   display: inline-block;
-  width: 14px;
+  width: 13px;
   margin-right: 8px;
   border-radius: 2px;
 }
@@ -62,25 +83,35 @@ a.list-group-item:hover {
 .ad-card {
   display: block;
   color: #333;
-  background-color: rgba(0,0,0,.05);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, .05);
   margin-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 3px;
 }
+
+.ad-card .col-xs-5 {
+  padding-right: 0;
+}
+
 .ad-card:hover {
   color: #337ab7;
   background-color: rgba(0, 0, 0, .1);
 }
+
 .ad-card img {
   border-radius: 3px;
 }
+
 .side-bar-group {
   background-color: rgba(0, 0, 0, .05);
+  border-radius: 3px;
 }
+
 .side-bar-group .title {
-  font-size: 14px;
-  font-weight: 700;
-  padding: 15px 10px 0 10px;
+  font-weight: bold;
+  padding: 15px 10px 3px 20px;
+  font-size: 16px;
 }
 
 .side-bar-item {
@@ -90,7 +121,77 @@ a.list-group-item:hover {
 .side-bar-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 .side-bar-item .side-desc {
   font-size: 12px;
   color: #a7a7a7;
+}
+
+.col-md-8 .title {
+  line-height: 1.2em;
+}
+
+.col-md-8 .info {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #a7a7a7;
+}
+
+.col-md-8 .brief {
+  line-height: 1.6em;
+  font-family: serif;
+  font-size: 15px;
+}
+
+.col-md-8 .brief img {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.col-md-4 .side-bar-group:first-child {
+  margin-bottom: 30px;
+}
+
+.side-bar-group:last-child .side-bar-item {
+  padding-left: 25px;
+}
+
+.footer .container {
+  color: #a7a7a7;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.container-sm {
+  max-width: 500px;
+  margin-bottom: 25%;
+}
+
+h1 small {
+  font-size: 35%;
+}
+
+#check-menu-label {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  display: none;
+  font-weight: normal;
+  color: #a7a7a7;
+}
+
+#check-menu-label:hover {
+  color: #333;
+}
+
+#check-menu-hidden:checked~div {
+  display: block !important;
+}
+
+#check-item-hidden:checked~div {
+  display: block !important;
 }

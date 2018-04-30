@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 800px;
+  height: 400px;
+  background-color: #eee;
+}
+
+#box {
+  position: absolute;
+  top: 150px;
+  left: 350px;
+  width: 100px;
+  height: 100px;
+  background: red;
+}

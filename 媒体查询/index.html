@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>媒体查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+    * {margin: 0; padding: 0; font-size: 0; }
+    @media screen and (min-width: 600px) 
+    {
+        #q, #w, #e {
+            background-color: rgb(255, 7, 7);
+            width: 600px;
+            height: 300px;
+        }
+
+    }
+    @media screen and (min-width: 1200px)
+    {
+        #q, #w, #e {
+            background-color: rgb(250, 235, 19);
+            width: 400px;
+            height: 200px;
+            display: inline-block;     
+        }
+    }
+    #q, #w, #e {
+        border: 1px solid ;
+    }
+    </style>
+</head>
+<body>
+    <div id="q"></div>
+    <div id="w"></div>
+    <div id="e"></div>
+</body>
+</html>

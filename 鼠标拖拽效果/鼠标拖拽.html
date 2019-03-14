@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标拖拽效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            position: relative;
+        }
+
+        span {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(252, 0, 0);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span></span>
+    </div>
+</body>
+<script>
+    var html = document.getElementsByTagName('html')[0],
+        span = document.getElementsByTagName('span')[0],
+        key = 0,
+        mouseX = 0,
+        mouseY = 0;
+    span.style.left = "100px";
+    span.style.top = "100px";
+
+    span.onmousedown = function () {
+        var event = event || window.event;
+        mouseX = event.clientX - html.offsetLeft;
+        mouseY = event.clientY;
+        spanX = parseInt(span.style.left);
+        spanY = parseInt(span.style.top);
+        key = 1;
+    }
+    html.onmouseup = function () {
+        key = 0;
+    }
+    html.onmousemove = function () {
+        if (key) {
+            var event = event || window.event,
+                x = event.clientX - html.offsetLeft - mouseX,
+                y = event.clientY - mouseY;
+            span.style.top = y + spanY + "px";
+            span.style.left = x + spanX + "px";
+
+        }
+    }
+
+</script>
+
+</html>

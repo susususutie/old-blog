@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 1000px;
+    position: fixed;
+    background-image: url(img/bg1.jpg);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    cursor:default
+}
+
+.time {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    background-color: #7f5733;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.timeIcon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 40px;
+    background-image: url(img/time.png);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.timeNum {
+    float: left;
+    margin-left: 20px;
+}
+
+.flag {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background-color: #7f5733;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.flagIcon {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 0;
+    margin-left: 35px;
+    background-image: url(img/qi.png);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.flagNum {
+    float: left;
+    margin-left: 15px;
+}
+
+.start {
+    width: 194px;
+    height: 44px;
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    background-color: #7f5733;
+    border: 3px solid #7f5733;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 44px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+.start:hover {
+    color: #7f5733;
+    background-color: #fff;
+    border: 3px solid #7f5733;
+}
+
+.game {
+    width: 360px;
+    height: 360px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #7f5733;
+}
+
+.item {
+    display: block;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #7f5733;
+    float: left;
+    background: #ffdcb3;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 是雷,作弊用的 */
+/* .item.isLei {
+    background-color: #fff;
+} */
+
+/* 显示雷 */
+.item.showLei {
+    background-image: url(img/lei.png);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.item.qiEd {
+    background-image: url(img/qi.png);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat:no-repeat;
+}
+
+.hidden {
+    display: none;
+}
+
+.alertCon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7f5633aa;
+}
+
+.alertBox {
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -223px;
+    padding: 20px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.msg {
+    margin-top: 100px;
+}
+
+.close {
+    position: absolute;
+    top: 280px;
+    left: 50%;
+    width: 200px;
+    height: 70px;
+    margin-left: -100px;
+    border-radius: 35px;
+    border: 5px solid #f4dbbd;
+    background-color: #7f5733;
+    line-height: 70px;
+    font-size: 30px;
+}
+
+.close:hover {
+    color: #7f5733;
+    background-color: #f4dbbd;
+    border-color: #7f5733;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+}

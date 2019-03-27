@@ -129,9 +129,9 @@ body {
 }
 
 /* 是雷,作弊用的 */
-/* .item.isLei {
+.item.isLei {
     background-color: #fff;
-} */
+}
 
 /* 显示雷 */
 .item.showLei {

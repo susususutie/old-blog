@@ -161,6 +161,44 @@
             cursor: pointer;
         }
 
+        .little {
+            width: 0;
+            height: 0;
+            margin: 0;
+        }
+
+        .little .s-clearGamer,
+        .little .p-msg,
+        .little .s-play {
+            display: none;
+        }
+
+        .little .s-gamerName {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0;
+            font-size: 16px;
+        }
+        
+        .little .p-score {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 0;
+            font-size: 16px;
+        }
+
+        .c-gameContainer {
+            box-sizing: border-box;
+            border: 1px solid #f50000;
+        }
 
         .hidden {
             display: none;
@@ -179,14 +217,15 @@
             <span class="s-createGamer"><button class="btn-createGamer">确定</button></span>
         </div>
 
-        <div class="d-perInf">
+        <div class="d-perInf little">
             <span class="s-clearGamer"><button class="btn-clearGamer">清除用户信息</button></span>
             <p class="p-msg">尊敬的VIP用户您好！</p>
             <span class="s-gamerName">name</span>
             <p class="p-score">最高得分：<span class="s-score">score</span></p>
             <span class="s-play"><button class="btn-play">开始游戏</button></span>
-
         </div>
+
+        <canvas class="c-gameContainer" width="600" height="450">浏览器不支持，换个浏览器吧。</canvas>
 
     </div>
 </body>
@@ -198,6 +237,7 @@
     var gamerName = document.getElementsByClassName("s-gamerName")[0];
     var score = document.getElementsByClassName("s-score")[0];
     var play = document.getElementsByClassName("btn-play")[0];
+    var canvas = document.getElementsByClassName("c-gameContainer")[0];
     var gamer = {
         name: "",
         score: 00,
@@ -279,9 +319,16 @@
     }
 
     function playGame() {
-        alert("还没开始做，敬请期待~")
+        perInf.classList.add("little");
+        canvas.classList.remove("hidden");
+        alert("还没开始做，敬请期待~");
     }
 
+    var ctx=canvas.getContext('2d');
+    var img=new Image();
+    img.src="plane1.png";
+    
+    
     init();
 
 

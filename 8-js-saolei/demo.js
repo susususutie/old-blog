@@ -64,8 +64,11 @@ function allEvent () {
 
     //事件委托找到被点击的小方格,调用对应左键和右键函数
     game.addEventListener("mousedown", function (e) {
+        console.log(e)
         targetItem = e.target;
-        var itemNumber = Array.prototype.indexOf.call(item, targetItem);
+        console.log("targetItem"+targetItem)
+        // var itemNumber = Array.prototype.indexOf.call(item, targetItem);
+        var itemNumber = [].indexOf.call(item, targetItem);
         if (e.which == 1 && !item[itemNumber].classList.contains("qied")) {
             leftClick(itemNumber);
         }else if (e.which == 3 && flag > 0) {

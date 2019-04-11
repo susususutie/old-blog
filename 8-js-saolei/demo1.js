@@ -12,7 +12,6 @@ bindEvent();
 //计时器
 var c = 0;
 var t;
-
 var flag = 20;
 
 //清除items的class、计时器
@@ -44,7 +43,6 @@ function jiShi() {
     c = c + 1
     t = setTimeout("jiShi()", 1000)
 }
-// clearInterval(t);
 
 //xuanLei选雷[0, 80],不是雷让它变雷，是雷重选
 function xuanLei (leishu) {
@@ -206,6 +204,4 @@ function bindEvent() {
         game.classList.add("hidden");
         timeNum.innerHTML = 0;
     })
-
-
 }

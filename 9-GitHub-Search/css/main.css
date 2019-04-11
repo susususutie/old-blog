@@ -1,0 +1,98 @@
+.wrapper {
+    width: 400px;
+    margin: 30px auto;
+}
+
+#searchForm {
+    width: 400px;
+    height: 34px;
+    margin-bottom: 20px;
+}
+
+.searchSpan {
+    display: inline-block;
+    width: 290px;
+    height: 32px;
+    border: 1px solid #00adef;
+    border-radius: 16px;
+}
+
+#searchInput {
+    margin-top: 3px;
+    margin-left: 16px;
+    height: 26px;
+    width: 258px;
+    text-align: left;
+    line-height: 26px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+
+#submitBtn {
+    display: inline-block;
+    float: right;
+    width: 80px;
+    height: 34px;
+    border: 1px solid #00adef;
+    border-radius: 17px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+#submitBtn:hover {
+    background-color: #00adef;
+    color: #fff;
+}
+
+#resultDiv {
+    float: left;
+    width: 400px;
+    border: 1px solid #00adef;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.userImg {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.userImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.mainInfo {
+    margin-top: 25px;
+    margin-left: 150px;
+    line-height: 15px;
+    font-size: 15px;
+}
+
+.mainInfo p {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.secondInfo {
+    clear: both;
+    background-color: #00adef11;
+    border-top: 1px solid grey;
+}
+
+.secondInfo p {
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 13px;
+    height: 13px;
+    color: gray;
+}

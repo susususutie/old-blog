@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-页面内往返弹动</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0px;
+            left: 0px;
+            background: #000;
+        }
+        span {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 200px;
+            left: 500px;
+            background: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+
+        oDiv.onclick = function () {
+            move(this)
+        }
+
+        function move(ele, x = 3, y = 2) {
+            clearInterval(ele.timer)
+            var vX = x;
+            var vY = y;
+            var oHeight = document.documentElement.clientHeight - ele.offsetHeight;
+            var oWidth = document.documentElement.clientWidth - ele.offsetWidth;
+
+            ele.timer = setInterval(function () {
+                var newLeft = ele.offsetLeft + vX;
+                var newTop = ele.offsetTop + vY;
+                // 上下反弹
+                if (newTop >= oHeight) {
+                    vY *= -1;
+                    ele.style.top = oHeight + "px";
+                } else if (newTop <= 0) {
+                    vY *= -1;
+                    ele.style.top = "0px";
+                } else {
+                    ele.style.top = newTop + "px";
+                }
+                // 左右反弹
+                if (newLeft >= oWidth) {
+                    vX *= -1;
+                    ele.style.left = oWidth + "px";
+                } else if (newLeft <= 0) {
+                    vX *= -1;
+                    ele.style.left = "0px";
+                } else {
+                    ele.style.left = newLeft + "px";
+                }
+            }, 1000/60)
+        }
+
+        
+        var oSpanList = Array.prototype.slice.call(document.getElementsByTagName("span"), 0);
+        for (var i in oSpanList) {
+            (function () {
+                oSpanList[i].onclick = function () {
+                    var x = Math.round( (Math.random() - 0.5) * 100);
+                    var y = Math.round( (Math.random() - 0.5) * 100);
+                    
+                    move(this, x, y)
+                }
+            })(i, oSpanList);
+        }
+
+    </script>
+</body>
+
+</html>

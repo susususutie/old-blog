@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6-模拟重力+拖拽</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 300px;
+            left: 200px;
+            background-image: url(./earth.gif);
+            background-size: 100%;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+
+        drag(oDiv)
+
+        // drage(ele)
+        function drag(ele) {
+            
+            var key = 1;
+            var mouseOnEleX;
+            var mouseOnEleY;
+
+            ele.onmousedown = function (event) {
+                // 在元素运动过程中又点击它，会再次触发mousedown，清除上一次运动的定时器防止定时器叠加
+                clearInterval(ele.timer)
+                // console.log(ele, "mouse down")
+                var event = event || window.event;
+                mouseOnEleX = event.clientX - this.offsetLeft;
+                mouseOnEleY = event.clientY - this.offsetTop;
+                key = 1;
+                var oldOffSetLeft = this.offsetLeft;
+                var oldOffSetTop = this.offsetTop;
+                var x, y;
+
+                document.onmousemove = function (event) {
+                    // console.log(ele, "doc mouse move")
+                    var event = event || window.event;
+                    if (key) {
+                        var newOffSetLeft = event.clientX - mouseOnEleX;
+                        var newOffSetTop = event.clientY - mouseOnEleY;
+                        ele.style.left = newOffSetLeft + "px";
+                        ele.style.top = newOffSetTop + "px";
+                    }
+                    x = newOffSetLeft - oldOffSetLeft;
+                    y = newOffSetTop - oldOffSetTop;
+                    oldOffSetLeft = newOffSetLeft;
+                    oldOffSetTop = newOffSetTop;
+                }
+
+                document.onmouseup = function () {
+                    key = 0;
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                    move(ele, x, y)
+                    console.log("all end")
+                }
+            }
+        }
+
+        // move(ele, →, ↓)
+        function move(ele, x = 50, y = 50) {
+            clearInterval(ele.timer)
+            var vX = x;
+            var vY = y;
+            var g =0.98;
+            var oHeight = document.documentElement.clientHeight - ele.offsetHeight;
+            var oWidth = document.documentElement.clientWidth - ele.offsetWidth;
+
+            ele.timer = setInterval(function () {
+                vY = vY + 10;
+                var newLeft = ele.offsetLeft + vX;
+                var newTop = ele.offsetTop + vY;
+                var yStop = false;
+                // 下上反弹
+                if (newTop >= oHeight) {
+                    vY *= -1;
+                    vY *= g;
+                    vX *= g;
+                    ele.style.top = oHeight + "px";
+                    if (Math.abs(vY) < 9) {
+                        // console.log("贴地")
+                        yStop = true;
+                    }
+                } else if (newTop <= 0) {
+                    vY *= -1;
+                    vY *= g;
+                    vX *= g;
+                    ele.style.top = "0px";
+                } else {
+                    ele.style.top = newTop + "px";
+                }
+
+                // 右左反弹
+                if (newLeft >= oWidth) {
+                    vX *= -1;
+                    vY *= g;
+                    vX *= g;
+                    // console.log("→|");
+                    ele.style.left = oWidth + "px";
+                } else if (newLeft <= 0) {
+                    vX *= -1;
+                    vY *= g;
+                    vX *= g;
+                    // console.log("|←");
+                    ele.style.left = "0px";
+                } else {
+                    ele.style.left = newLeft + "px";
+                }
+                if (Math.abs(vX) < 1 && yStop) {
+                    clearInterval(ele.timer)
+                    console.log("timer stop")
+                }
+            }, 1000 / 60)
+        }
+
+    </script>
+</body>
+
+</html>

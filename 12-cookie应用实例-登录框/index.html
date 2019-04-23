@@ -101,8 +101,8 @@
                 var username = usernameInput.value;
                 var passworld = passworldInput.value;
                 if (username && passworld) {
-                    manageCookie.setCookie("username", username)
-                            .setCookie("passworld", passworld)
+                    manageCookie.setCookie("username", username, 3000000)
+                            .setCookie("passworld", passworld, 3000000)
                     window.alert("注册成功！")
                     hasSignUp()
                 } else {

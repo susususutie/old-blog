@@ -9,7 +9,7 @@ form.on("submit", function (e) {
     
     e.preventDefault();
     username = input.val() || "susususutie";
-    console.log(username);
+    // console.log(username);
     $.getJSON("http://api.github.com/users/" + username).done(function (json) {
         var suHtml = `
         <div class="userImg">

@@ -1,0 +1,29 @@
+body {
+    margin: 0px;
+}
+
+.oDiv {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    /* left: 600px; */
+    background-color: gray;
+}
+
+.oSpan {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    display: block;
+    height: 100px;
+    width: 1px;
+    background-color: red;
+}
+
+.oBtn {
+    position: absolute;
+    top: 100px;
+    left: 260px;
+}

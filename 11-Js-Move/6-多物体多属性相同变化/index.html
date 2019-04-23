@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>6-多物体多属性相同变化</title>
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .change-div {
+            position: absolute;
+            top: 0px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-style: dashed;
+            border-width: 1px;
+            border-color: yellow;
+        }
+
+        .div1 {
+            left: 0px;
+        }
+
+        .div2 {
+            left: 230px;
+        }
+
+        .div3 {
+            left: 460px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="change-div div1"></div>
+    <div class="change-div div2"></div>
+    <div class="change-div div3"></div>
+
+    <script>
+        var oChangeDiv = document.getElementsByClassName("change-div");
+        for (var i = 0; i < oChangeDiv.length; i++) {
+            oChangeDiv[i].onmouseenter = function () {
+                move(this, tarAtt1);
+            }
+            oChangeDiv[i].onmouseleave = function () {
+                move(this, tarAtt2);
+            }
+        }
+        
+        //getStyle(elem, "prop")获取任意元素的任意样式
+        function getStyle(elem, prop) {
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(elem, null)[prop];
+            } else {
+                return elem.currentStyle[prop];
+            }
+        }
+
+        var tarAtt1 = {
+            opacity: 0.1,
+            width: 200,
+            height: 300,
+            borderWidth: 10,
+        };
+        var tarAtt2 = {
+            opacity: 1,
+            width: 100,
+            height: 100,
+            borderWidth: 1,
+        }
+
+        //change(ele, attr, target)
+        function changeAttr(ele, attr, target) {
+            console.log("before change", attr, getStyle(ele, attr), typeof attr)
+            if (attr == "opacity") {
+                var iSpeed = (target - parseFloat(getStyle(ele, attr))) * 100 / 7;
+            } else {
+                var iSpeed = (target - parseInt(getStyle(ele, attr))) / 7;
+            }
+            iSpeed = (iSpeed > 0) ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+            if (attr == "opacity") {
+                ele.style[attr] = (parseFloat(getStyle(ele, attr)) * 100 + iSpeed) / 100;
+            } else {
+                ele.style[attr] = parseInt(getStyle(ele, attr)) + iSpeed + "px";
+            }
+            console.log("after change", attr, getStyle(ele, attr))
+        }
+
+        function move(ele, json) {
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var allChanged = true;
+
+                for (var attr in json) {
+                    console.log(attr)
+                    changeAttr(ele, attr, json[attr])
+
+                    if (parseFloat(ele.style[attr]) !== json[attr]) {
+                        console.log(attr, "not changed, allchanged-->false")
+                        allChanged = false;
+                    } else {
+                        console.log(attr, "has changed, 不改变allchanged")
+                    }
+                }
+                if (allChanged) {
+                    clearInterval(ele.timer)
+                    console.log("allchanged, stop change close timer")
+                }
+            }, 10)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2-JSONP跨域-百度搜索接口</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #004275e6;
+        }
+
+        .form-as-bd {
+            width: 641px;
+            height: 40px;
+            margin: 100px auto;
+            color: #000;
+            background-color: #fff;
+            font-size: 0px;
+            text-align: left;
+        }
+
+        .input-span {
+            position: relative;
+            display: inline-block;
+            width: 537px;
+            height: 40px;
+            vertical-align: top;
+        }
+
+        .input-span .input-text-input {
+            display: inline-block;
+            width: 480px;
+            height: 20px;
+            padding: 10px 50px 10px 7px;
+            border: none;
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        .input-span .input-text-input:focus {
+            outline: none;
+        }
+
+        .input-span .input-icon-span {
+            position: absolute;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            top: 11px;
+            right: 11px;
+            line-height: 18px;
+            font-size: 18px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .submit-span {
+            vertical-align: top;
+            display: inline-block;
+            width: 104px;
+            height: 40px;
+        }
+
+        .submit-span .submit-btn-input {
+            font-size: 16px;
+            width: 104px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-span .submit-btn-input:focus {
+            outline: none;
+        }
+
+        .request-ul {
+            width: 537px;
+            display: none;
+            background-color: #fff;
+            font-size: 14px;
+            list-style: none;
+        }
+
+        .request-ul li {
+            width: 537px;
+            height: 34px;
+            line-height: 34px;
+        }
+
+        .request-ul li:first-child {
+            border-top: 1px solid #dcdcdc;
+        }
+
+        .request-ul li:hover {
+            background-color: #dcdcdc;
+        }
+
+        .request-ul li a {
+            display: inline-block;
+            width: 480px;
+            height: 34px;
+            margin-left: 5px;
+            line-height: 34px;
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form-as-bd">
+        <span class="input-span">
+            <input type="text" class="input-text-input" maxlength="100" autocomplete="off">
+            <span class="input-icon-span">×</span>
+        </span>
+        <span class="submit-span">
+            <input type="submit" value="百度一下" class="submit-btn-input">
+        </span>
+        <ul class="request-ul"></ul>
+    </form>
+
+    <script>
+        var searchInput = document.getElementsByClassName("input-text-input")[0];
+        var requestList = document.getElementsByClassName("request-ul")[0];
+        var clearInputValue = document.getElementsByClassName("input-icon-span")[0];
+        var submitBtn = document.getElementsByClassName("submit-btn-input")[0];
+
+        searchInput.oninput = function () {
+            if (searchInput.value) {
+                myJSONP(searchInput.value)
+            } else {
+                requestList.style.display = "none";
+            }
+        }
+
+        clearInputValue.onclick = function () {
+            searchInput.value = "";
+            requestList.style.display = "none";
+        }
+
+        submitBtn.onclick = function (e) {
+            e.preventDefault();
+            if (searchInput.value) {
+                location.href = `https://www.baidu.com/s?wd=${searchInput.value}`;
+            }
+        }
+
+        function myJSONP(value) {
+            var oScript = document.createElement("script");
+            oScript.src = `https://www.baidu.com/sugrec?&prod=pc&wd=${value}&cb=getBaiduWorlds`;
+            document.body.appendChild(oScript);
+            // console.log(oScript);
+            document.body.removeChild(oScript);
+        }
+
+        function getBaiduWorlds(data) {
+            if (data.g) {
+                var dataArr = data.g;
+                var str = "";
+                dataArr.forEach(function (item) {
+                    var url = `https://www.baidu.com/s?wd=${item.q}`;
+                    str += `<li><a href="${url}">${item.q}</a></li>`;
+                    requestList.innerHTML = str;
+                    requestList.style.display = "block";
+                })
+            } else {
+                requestList.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

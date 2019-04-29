@@ -2,31 +2,173 @@
 <html>
 
 <head>
-  <script></script>
-  <title>简易博客测试</title>
-  <meta name="description" content="苏苏苏苏铁的个人博客">
-  <meta http-equiv="content-type" content="text/html;charse=utf-8">
-  <link href="css/main.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="images/icon.png" />
+    <meta http-equiv="content-type" content="text/html;charse=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="苏苏苏苏铁的个人博客">
+    <title>简易博客测试</title>
+    <link rel="stylesheet" href="./src/css/bootstrap-v3.3.7.min.css">
+    <link href="./src/css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="./src/img/icon.png" />
 </head>
 
 <body>
-  <div class="container">
-    <a href="./1-Bootstrap新闻站开发/index.html">1. Bootstrap新闻站（Bootstrap）</a>
-    <a href="./2-页面内往返弹动/index.html">2. 弹力球（原生JS）</a>
-    <a href="./3-屏保时钟/clk.html">3. 屏保时钟: clk</a>
-    <a href="./04-JSONP跨域-百度搜索框/index.html">4. JSONP跨域实现百度搜索联想词（JSONP）</a>
-    <a href="./5-鼠标拖拽效果/鼠标拖拽.html">5. 鼠标拖拽效果（原生JS）</a>
-    <a href="./06-模拟重力+拖拽/index.html">6. 模拟重力 + 拖拽（原生JS）</a>
-    <a href="./07-Js-TodoList/demo.html">7. TodoList（原生JS）</a>
-    <a href="./8-js-saolei/demo.html">8. 扫雷（原生JS）</a>
-    <a href="./9-GitHub-Search/index.html">9. Github用户搜索（jquery + ajax + GitHub API）</a>
-    <a href="./10-Slider-Img/index.html">10. 轮播图-待更新（原生JS）</a>
-    <a href="./11-Js-Move/">——其他运动demo（原生JS）</a>
-    <a href="./12-cookie应用实例-登录框/index.html">12. cookie实现登录注册（JS + cookie）</a>
 
-    <a href="./100-other">其他练习项目</a>
-  </div>
+
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">品牌logo</a>
+                <button class="collapsed navbar-toggle" data-toggle="collapse" data-target="#collapse-01">
+          <span class="glyphicon glyphicon-menu-hamburger"></span>
+        </button>
+            </div>
+
+            <!--  collapse navbar-collapse 被折叠部分 -->
+            <div class="collapse navbar-collapse" id="collapse-01">
+
+                <ul class="nav navbar-nav navbar-left visible-md visible-lg visible-sm visible-xs">
+                    <li class="active"><a href="#">首页</a></li>
+                    <li><a href="#">读书</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">更多发现</a></li>
+                </ul>
+
+                <!-- form -->
+                <form class="navbar-form navbar-left visible-lg">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索全站内容">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default">搜索</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- 个人中心 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">消息</a></li>
+                    <li><a href="#">动态</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">个人设置</li>
+                            <li class="divider"></li>
+                            <li><a href="#">我的收藏</a></li>
+                            <li><a href="#">历史记录</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div><!-- 被折叠部分 -->
+        </div><!-- top 导航栏 container -->
+    </header>
+
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>SUTIE</h1>
+            <!-- <p>网站描述网站描述网站描述网站描述网站描述网站描述网站描述网站描述</p> -->
+        </div>
+    </div>
+
+
+    <div class="floor-0 container-fluid text-center">
+        <h1>demo</h1>
+        <h1><span class="glyphicon glyphicon-arrow-down"></span></h1>
+    </div>
+
+    <div class="floor-1 main-nav container-fluid">
+        <div class="row">
+            <!-- js -->
+            <ul class="row-1-col-1 col-md-3 col-sm-6 col-xs-12">
+                <li>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <a href="./1-Bootstrap新闻站开发/index.html">1. Bootstrap新闻站（Bootstrap）</a>
+                    <span class="label label-default">Default</span>
+                </li>
+
+                <li>
+                    <span class="glyphicon glyphicon-heart"></span>
+                    <a href="./2-页面内往返弹动/index.html">2. 弹力球（原生JS）</a>
+                    <span class="label label-danger">danger</span>
+                </li>
+
+                <li>
+                    <span></span>
+                    <a href="./07-Js-TodoList/demo.html">7. TodoList（原生JS）
+            <span class="label label-danger">danger</span></a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="./8-js-saolei/demo.html">8. 扫雷（原生JS）</a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="./11-Js-Move/">——其他运动demo（原生JS）</a>
+                </li>
+
+            </ul>
+
+
+
+            <!-- bootstrap -->
+            <ul class="row-1-col-2 col-md-3 col-sm-6 col-xs-12">
+                <li>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <a href="./3-屏保时钟/clk.html">3. 屏保时钟: clk</a>
+                    <span class="label label-primary">primary</span>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <a href="./04-JSONP跨域-百度搜索框/index.html">4. JSONP跨域实现百度搜索联想词（JSONP）</a>
+                    <span class="label label-warning">warning</span>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="./9-GitHub-Search/index.html">9. Github用户搜索（jquery + ajax + GitHub API）</a>
+                </li>
+            </ul>
+
+
+            <!-- net -->
+            <ul class="row-1-col-3 col-md-3 col-sm-6 col-xs-12">
+                <li>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <a href="./5-鼠标拖拽效果/鼠标拖拽.html">5. 鼠标拖拽效果（原生JS）</a>
+                    <span class="label label-success">success</span>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="./10-Slider-Img/index.html">10. 轮播图-待更新（原生JS）</a>
+                </li>
+
+                <li>
+                    <span></span>
+                    <a href="./12-cookie应用实例-登录框/index.html">12. cookie实现登录注册（JS + cookie）</a>
+                </li>
+
+            </ul>
+
+
+            <!-- other -->
+            <ul class="row-1-col-4 col-md-3 col-sm-6 col-xs-12">
+                <li>
+                    <span class="glyphicon glyphicon-bookmark"></span>
+                    <a href="./06-模拟重力+拖拽/index.html">6. 模拟重力 + 拖拽（原生JS）</a>
+                    <span class="label label-info">info</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="./src/js/jquery-v3.4.0.min.js"></script>
+    <script src="./src/js/bootstrap-v3.3.7.min.js"></script>
 </body>
 
 </html>

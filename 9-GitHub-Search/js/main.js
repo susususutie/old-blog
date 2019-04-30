@@ -10,7 +10,7 @@ form.on("submit", function (e) {
     e.preventDefault();
     username = input.val() || "susususutie";
     // console.log(username);
-    $.getJSON("http://api.github.com/users/" + username).done(function (json) {
+    $.getJSON("https://api.github.com/users/" + username).done(function (json) {
         var suHtml = `
         <div class="userImg">
                 <img src="${json.avatar_url}" alt="用户头像">

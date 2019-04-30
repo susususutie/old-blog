@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>002-canvas-prize</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+
+        canvas {
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas width="200" height="60"></canvas>
+
+    <script>
+
+        var canvas = document.getElementsByTagName("canvas")[0],
+            bi = canvas.getContext("2d"),
+            w = canvas.width,
+            h = canvas.height,
+            oldPoint = {},
+            newPoint = {};
+
+        init();
+
+        function init() {
+            bi.fillStyle = "#555";
+            bi.fillRect(0, 0, w, h);
+            bi.globalCompositeOperation = "destination-out";
+
+            createBg();
+        }
+
+        function createBg() {
+            var img = new Image(),
+                n = Math.floor(Math.random() * 100);
+
+            if (n < 5) {
+                img.src = "../src/img/firstPrize.png";
+            } else if (n < 15) {
+                img.src = "../src/img/secondPrize.png";
+            } else if (n < 30) {
+                img.src = "../src/img/thirdPrize.png";
+            } else {
+                img.src = "../src/img/noPrize.png";
+            }
+            
+            img.onload = function () {
+                canvas.style.backgroundImage = `url("${img.src}")`;
+
+                canvas.addEventListener("mousedown", downFunc, false);
+            }
+        }
+
+        function downFunc(e) {
+            canvas.addEventListener("mousemove", moveFunc, false);
+
+            document.addEventListener("mouseup", upFunc, false);
+
+            oldPoint.x = e.clientX - canvas.offsetLeft;
+            oldPoint.y = e.clientY - canvas.offsetTop;
+        }
+
+        function moveFunc(e) {
+            newPoint.x = e.clientX - canvas.offsetLeft;
+            newPoint.y = e.clientY - canvas.offsetTop;
+
+            bi.beginPath();
+            bi.fillStyle = "black";
+            bi.lineJoin = "round";
+            bi.lineWidth = 20;
+            bi.moveTo(oldPoint.x, oldPoint.y);
+            bi.lineTo(newPoint.x, newPoint.y);
+            bi.stroke();
+
+            bi.arc(newPoint.x, newPoint.y, 10, 0, Math.PI * 2, 0)
+            bi.fill();
+
+            oldPoint.x = newPoint.x;
+            oldPoint.y = newPoint.y;
+        }
+
+        function upFunc() {
+            canvas.removeEventListener("mousemove", moveFunc, false);
+            document.removeEventListener("mouseup", downFunc, false);
+
+            clearCanvas()
+        }
+
+        function clearCanvas() {
+            var dataArr = bi.getImageData(0, 0, w, h).data,
+                len = dataArr.length,
+                gua = 0;
+            for (var i = 3; i < len; i += 4) {
+                if (dataArr[i] == 0) {
+                    gua++;
+                }
+            }
+            if (gua >= len / 4 * 0.6) {
+                bi.clearRect(0, 0, w, h)
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

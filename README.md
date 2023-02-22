@@ -1,3 +1,2 @@
-# susususutie.github.io
-简易网页测试
----
+# old-blog(原susususutie.github.io)
+已废弃
